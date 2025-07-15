@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="w-75 m-auto py-5">
+        <div class="form-floating mb-3 ">
+            <input oninput="validateForm(this)" type="text" class="form-control" id="productName" placeholder="product Name">
+            <span class="text-danger d-none">product should start with capital char followed by from 2 to 15 small char</span>
+            <label for="productName">Product Name :</label>
+        </div>
+        <div class="form-floating mb-3 ">
+            <input oninput="validateForm(this)" type="number" class="form-control" id="productPrice" placeholder="product Price">
+            <span class="text-danger d-none">price should be from 2 to 10 number start with 1</span>
+            <label for="productPrice">Product Price :</label>
+        </div>
+        <div class="form-floating mb-3 ">
+            <input oninput="validateForm(this)" list="categories" type="text" class="form-control" id="productCategory" placeholder="product Category">
+            <span class="text-danger d-none"> product cat should be (Tv|Mobile|Laptop|screens|Smart Watch)</span>
+            <label for="productCategory">Product Category :</label>
+            <datalist id="categories">
+                <option value="Tv">
+                <option value="Mobile">
+                <option value="Laptop">
+                <option value="screens">
+                <option value="Smart Watch">
+            </datalist>
+        </div>
+        <div class="form-floating mb-3 ">
+            <textarea oninput="validateForm(this)" type="text" class="form-control" id="productDesc" placeholder="product Desc"></textarea>
+            <span class="text-danger d-none">product desc should be from 5 to 350 char</span>
+            <label for="productDesc">Product Description :</label>
+        </div>
+       <div class="form-floating mb-3 ">
+            <input type="file" class="form-control" id="productImage" placeholder="product Image">
+            <label for="productImage">Product Image :</label>
+        </div>
+        <button id="addBtn" onclick="addProduct()" class="btn btn-info text-white">Add Product</button> 
+        <button id="updateBtn" onclick="updateProduct()" class="btn d-none btn-danger text-white">Update Product</button> 
+    </div>
+    <div>
+        <div class="container">
+            <input id="productsSearch" oninput="searchProducts()" placeholder="search by name..." type="text" class="form-control my-2">
+            <div id="rowData" class="row">
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
